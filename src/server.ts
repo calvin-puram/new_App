@@ -2,9 +2,10 @@ import "dotenv/config";
 import App from "./app";
 import IndexRoute from "./routes/index.routes";
 import AuthRoute from "./routes/auth.routes";
+import JobsRoute from "./routes/jobs.routes";
 import logger from "./utils/logger";
 
-const app = new App([new IndexRoute(), new AuthRoute()]);
+const app = new App([new IndexRoute(), new JobsRoute(), new AuthRoute()]);
 
 const server = app.listen();
 

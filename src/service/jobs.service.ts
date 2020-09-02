@@ -12,6 +12,7 @@ class JobService {
       totalPage = res.data.length;
       page++;
     }
+    return jobs;
   };
 }
 
