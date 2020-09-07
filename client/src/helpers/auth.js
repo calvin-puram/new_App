@@ -50,7 +50,7 @@ export const logout = (next) => {
 };
 
 // get user from LS
-export const getUser = () => {
+export const isAuth = () => {
   const cookieChecked = getCookie("token");
   if (cookieChecked) {
     if (localStorage.getItem("user")) {
