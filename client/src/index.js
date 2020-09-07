@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import Register from "./screens/Register";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
 
 ReactDOM.render(
   <React.StrictMode>
