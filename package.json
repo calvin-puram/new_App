@@ -2,22 +2,7 @@
   "name": "jobs_mvp",
   "version": "1.0.0",
   "description": "",
-  "main": "db.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "dev": "nodemon server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/calvin-puram/new_App.git"
-  },
-  "author": "calvin Job <puram.calvin@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/calvin-puram/new_App/issues"
-  },
-  "homepage": "https://github.com/calvin-puram/new_App#readme",
+  "main": "server.js",
   "dependencies": {
     "connect-mongo": "^3.2.0",
     "dotenv": "^8.2.0",
@@ -28,5 +13,21 @@
     "morgan": "^1.10.0",
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calvin-puram/new_App.git"
+  },
+  "keywords": [],
+  "author": "calvin Job <puram.calvin@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/calvin-puram/new_App/issues"
+  },
+  "homepage": "https://github.com/calvin-puram/new_App#readme"
 }
