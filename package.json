@@ -17,5 +17,15 @@
   "bugs": {
     "url": "https://github.com/calvin-puram/new_App/issues"
   },
-  "homepage": "https://github.com/calvin-puram/new_App#readme"
+  "homepage": "https://github.com/calvin-puram/new_App#readme",
+  "dependencies": {
+    "connect-mongo": "^3.2.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.10.4",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0"
+  }
 }
