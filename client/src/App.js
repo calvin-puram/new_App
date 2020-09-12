@@ -1,7 +1,7 @@
 import React from "react";
 import { GoogleLogin } from "react-google-login";
 import "./App.css";
-
+const axios = require("axios");
 const App = () => {
   const responseSuccessGoogle = (response) => {
     axios
@@ -9,7 +9,7 @@ const App = () => {
         tokenId: response.tokenId,
       })
       .then((res) => {
-        console.log(res);
+        console.log(res.data);
       });
   };
 

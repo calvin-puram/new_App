@@ -5,9 +5,12 @@
   "main": "server.js",
   "dependencies": {
     "connect-mongo": "^3.2.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "google-auth-library": "^6.0.6",
+    "jsonwebtoken": "^8.5.1",
     "method-override": "^3.0.0",
     "mongoose": "^5.10.4",
     "morgan": "^1.10.0",
@@ -17,7 +20,10 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server.js",
+    "server-dev": "nodemon server.js",
+    "client-dev": "npm start --prefix client",
+    "dev": "concurrently \"npm run server-dev\" \"npm run client-dev\""
   },
   "repository": {
     "type": "git",
