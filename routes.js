@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require("./model/Users");
 const { OAuth2Client } = require("google-auth-library");
 const jwt = require("jsonwebtoken");
+const fetch = require("node-fetch");
 
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
@@ -36,6 +37,21 @@ router.post("/googleLogin", (req, res) => {
         }
       }
     });
+});
+
+router.post("/facebookLogin", (req, res) => {
+  const { accessToken, userID } = req.body;
+  const urlGraphFacebook = `https://graph.facebook.com/v2.11/${userID}/?fields=id,name,email&access_token=${accessToken}`;
+
+  fetch(urlGraphFacebook, {
+    method: "GET",
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      console.log(res);
+      // const {name, email} = res;
+    })
+    .catch((err) => console.log(err.message));
 });
 
 module.exports = router;

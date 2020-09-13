@@ -1,7 +1,9 @@
 import React from "react";
 import { GoogleLogin } from "react-google-login";
+import FacebookLogin from "react-facebook-login";
 import "./App.css";
-const axios = require("axios");
+import axios from "axios";
+
 const App = () => {
   const responseSuccessGoogle = (response) => {
     axios
@@ -17,6 +19,19 @@ const App = () => {
     console.log(response);
   };
 
+  const responseFacebook = (response) => {
+    const { accessToken, userID } = response;
+
+    axios
+      .post("http://localhost:4000/api/facebookLogin", {
+        accessToken,
+        userID,
+      })
+      .then((res) => {
+        console.log(res.data);
+      });
+  };
+
   return (
     <div className='col-md-6 offset-md-3 text-center mt-5'>
       <GoogleLogin
@@ -26,6 +41,13 @@ const App = () => {
         onFailure={responseErrorGoogle}
         cookiePolicy={"single_host_origin"}
       />
+      <div>
+        <FacebookLogin
+          appId={process.env.REACT_APP_APP_ID}
+          autoLoad={false}
+          callback={responseFacebook}
+        />
+      </div>
     </div>
   );
 };
